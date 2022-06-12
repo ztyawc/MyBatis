@@ -5,6 +5,9 @@
 <configuration>
     <!--读取文件-->
     <properties resource="db.properties"/>
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
     <!--设置类别名-->
     <typeAliases>
         <!--<typeAlias type="com.zty.pojo.User" alias="User"/>-->

@@ -26,7 +26,7 @@
         select * from mybatis.user where name=#{name}
     </select>
     <!--map查所有用户-->
-    <select id="mapGetUser" parameterType="Map" resultType="hello">
+    <select id="mapGetUser" parameterType="Map" resultType="User">
         select * from mybatis.user where name=#{name1}
     </select>
 </mapper>
