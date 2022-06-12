@@ -77,4 +77,15 @@ public class UserDaoTest {
         System.out.println(user);
         sqlSession.close();
     }
+    /*Limit分页查询*/
+    @Test
+    public void getUserByLimit(){
+        SqlSession sqlSession = MyBatisUtil.getSqlSession();
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        Map<String,Object>map=new HashMap<String,Object>();
+        map.put("id1",0);
+        map.put("id2",2);
+        mapper.getUserByLimit(map);
+        sqlSession.close();
+    }
 }

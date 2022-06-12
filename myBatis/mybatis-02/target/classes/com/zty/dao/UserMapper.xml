@@ -29,4 +29,8 @@
     <select id="mapGetUser" parameterType="Map" resultType="User">
         select * from mybatis.user where name=#{name1}
     </select>
+    <!--·ÖÒ³²éÑ¯-->
+    <select id="getUserByLimit" parameterType="Map" resultType="User">
+        select * from mybatis.user limit #{id1},#{id2}
+    </select>
 </mapper>

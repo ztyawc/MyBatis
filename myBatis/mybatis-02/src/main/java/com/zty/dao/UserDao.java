@@ -20,4 +20,6 @@ public interface UserDao {
     User getUserById1(String name);
     //map根据名字查用户
     User mapGetUser(Map<String,Object>map);
+    //分页查询
+    List<User> getUserByLimit(Map<String,Object>map);
 }
