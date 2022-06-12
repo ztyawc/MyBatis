@@ -1,5 +1,7 @@
 package com.zty.pojo;
 
+import org.apache.ibatis.type.Alias;
+
 public class User {
     private int id;
     private String name;
