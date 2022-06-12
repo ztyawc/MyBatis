@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zty.dao.UserDao">
+<select id="getUserList" resultType="com.zty.pojo.User">
+    select * from mybatis.user
+</select>
+    <select id="getUserById" parameterType="int" resultType="com.zty.pojo.User">
+        select * from mybatis.user where id=#{id}
+    </select>
+<insert id="addUser" parameterType="com.zty.pojo.User">
+    insert into mybatis.user (id, name, pwd) VALUES (#{id},#{name},#{pwd})
+</insert>
+    <delete id="rmUser" parameterType="int">
+        delete from mybatis.user where id=#{id}
+    </delete>
+    <update id="setUser" parameterType="com.zty.pojo.User">
+        update mybatis.user set name=#{name},pwd=#{pwd} where id=#{id}
+    </update>
+    <select id="getLike" resultType="com.zty.pojo.User">
+    select * from mybatis.user where name like #{value}
+    </select>
+    <select id="getUserById222" resultType="com.zty.pojo.User">
+        select * from mybatis.user where id=#{id} and name=#{name}
+    </select>
+
+    <select id="getUserById2" parameterType="Map" resultType="com.zty.pojo.User">
+        select * from mybatis.user where name=#{name} and id=#{id}
+    </select>
+
+    <insert id="addUser1" parameterType="com.zty.pojo.User">
+        insert into mybatis.user (id, name, pwd) VALUES (#{id1},#{name1},#{pwd1})
+    </insert>
+
+    <delete id="rmUser1" parameterType="com.zty.pojo.User">
+        delete from mybatis.user where id=#{id}
+    </delete>
+    <update id="setUser1" parameterType="com.zty.pojo.User">
+        update mybatis.user set name=#{name} where id=#{id}
+    </update>
+</mapper>
