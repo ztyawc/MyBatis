@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF8" ?>
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
@@ -25,7 +25,8 @@
     <select id="getUserById1" parameterType="String" resultType="com.zty.pojo.User">
         select * from mybatis.user where name=#{name}
     </select>
-    <select id="mapGetUser" parameterType="Map" resultType="com.zty.pojo.User">
+    <!--map查所有用户-->
+    <select id="mapGetUser" parameterType="Map" resultType="User">
         select * from mybatis.user where name=#{name1}
     </select>
 </mapper>
