@@ -5,7 +5,9 @@ import com.zty.util.MyBatisUtil;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class UserDaoTest {
     //查询所有用户
@@ -55,7 +57,24 @@ public class UserDaoTest {
         sqlSession.commit();
         sqlSession.close();
     }
-
-
-
+    //根据名字查询用户
+    @Test
+    public void testgetUserById1(){
+        SqlSession sqlSession = MyBatisUtil.getSqlSession();
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        User user = mapper.getUserById1("张天宇");
+        System.out.println(user);
+        sqlSession.close();
+    }
+    @Test
+    //map根据名字查用户
+    public void mapGetUser(){
+        SqlSession sqlSession = MyBatisUtil.getSqlSession();
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        Map<String,Object>map=new HashMap<String,Object>();
+        map.put("name1","张天宇");
+        User user = mapper.mapGetUser(map);
+        System.out.println(user);
+        sqlSession.close();
+    }
 }

@@ -3,6 +3,7 @@ package com.zty.dao;
 import com.zty.pojo.User;
 
 import java.util.List;
+import java.util.Map;
 
 public interface UserDao {
     //查询全部用户
@@ -15,5 +16,8 @@ public interface UserDao {
     int rmUser(int id);
     //更新用户
     int setUser(User user);
-
+    //根据名字查询用户
+    User getUserById1(String name);
+    //map根据名字查用户
+    User mapGetUser(Map<String,Object>map);
 }
