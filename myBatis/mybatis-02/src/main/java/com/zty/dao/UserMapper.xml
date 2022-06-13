@@ -33,4 +33,5 @@
     <select id="getUserByLimit" parameterType="Map" resultType="User">
         select * from mybatis.user limit #{id1},#{id2}
     </select>
+
 </mapper>
